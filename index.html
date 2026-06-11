@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RORY DEX — Rory Drew | AI Engineer &amp; Data Analyst</title>
+<meta name="description" content="Rory Drew — AI Engineer and Data Analyst. University of Georgia MIS. Portfolio styled as a HeartGold/SoulSilver Pokédex.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ BOOT SCREEN ============ -->
+<div id="boot" aria-hidden="true">
+  <div class="boot-led"></div>
+  <div class="boot-screen">
+    <div class="boot-flicker"></div>
+    <h1 class="boot-title" id="boot-title"></h1>
+    <p class="boot-sub" id="boot-sub">INITIALIZING&hellip;</p>
+    <p class="boot-skip">CLICK OR PRESS ANY KEY TO SKIP</p>
+  </div>
+</div>
+
+<!-- ============ CRT OVERLAY ============ -->
+<div class="crt" aria-hidden="true"></div>
+
+<!-- ============ POKÉDEX DEVICE ============ -->
+<main class="pokedex" id="pokedex">
+
+  <!-- top status bar -->
+  <header class="dex-top">
+    <span class="dex-lens" aria-hidden="true"></span>
+    <span class="dex-lights" aria-hidden="true"><i></i><i></i><i></i></span>
+    <h1 class="dex-name">RORY&nbsp;DEX</h1>
+    <span class="dex-version">v2.0 &middot; JOHTO&nbsp;BUILD</span>
+    <button id="sound-toggle" class="sound-toggle" type="button" aria-pressed="false">SOUND:OFF</button>
+  </header>
+
+  <div class="dex-body">
+
+    <!-- ============ LEFT PANEL: NAV ============ -->
+    <nav class="dex-left" aria-label="Pokédex categories">
+      <div class="panel-label">&#9670; SELECT ENTRY</div>
+      <ul class="nav-list" id="nav-list" role="tablist">
+        <li role="presentation">
+          <button class="nav-item is-active" role="tab" aria-selected="true" aria-controls="panel-profile" data-panel="panel-profile" type="button">
+            <span class="nav-no">001</span>
+            <span class="nav-icon icon-trainer" aria-hidden="true"></span>
+            <span class="nav-label">TRAINER PROFILE</span>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="nav-item" role="tab" aria-selected="false" aria-controls="panel-field" data-panel="panel-field" type="button">
+            <span class="nav-no">002</span>
+            <span class="nav-icon icon-field" aria-hidden="true"></span>
+            <span class="nav-label">FIELD LOG</span>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="nav-item" role="tab" aria-selected="false" aria-controls="panel-research" data-panel="panel-research" type="button">
+            <span class="nav-no">003</span>
+            <span class="nav-icon icon-research" aria-hidden="true"></span>
+            <span class="nav-label">RESEARCH LOGS</span>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="nav-item" role="tab" aria-selected="false" aria-controls="panel-ability" data-panel="panel-ability" type="button">
+            <span class="nav-no">004</span>
+            <span class="nav-icon icon-ability" aria-hidden="true"></span>
+            <span class="nav-label">ABILITY SET</span>
+          </button>
+        </li>
+        <li role="presentation">
+          <button class="nav-item" role="tab" aria-selected="false" aria-controls="panel-contact" data-panel="panel-contact" type="button">
+            <span class="nav-no">005</span>
+            <span class="nav-icon icon-contact" aria-hidden="true"></span>
+            <span class="nav-label">CONTACT / LINKS</span>
+          </button>
+        </li>
+      </ul>
+      <div class="nav-help">
+        <span>&#9650;&#9660; SELECT</span><span>&#9166; CONFIRM</span>
+      </div>
+    </nav>
+
+    <!-- ============ SPINE / HINGE ============ -->
+    <div class="dex-spine" aria-hidden="true">
+      <i></i><i></i><i></i><i></i>
+    </div>
+
+    <!-- ============ RIGHT PANEL: DETAIL ============ -->
+    <div class="dex-right" id="dex-right">
+
+      <!-- ===== 001 TRAINER PROFILE ===== -->
+      <section class="panel is-shown" id="panel-profile" role="tabpanel" aria-label="Trainer Profile">
+        <div class="panel-head">
+          <span class="panel-no">No.001</span>
+          <h2>TRAINER PROFILE</h2>
+        </div>
+
+        <div class="trainer-card">
+          <div class="trainer-card-top">
+            <figure class="trainer-photo">
+              <img src="assets/headshot.jpg" alt="Portrait of Rory Drew" id="headshot"
+                   onerror="this.closest('.trainer-photo').classList.add('photo-missing')">
+              <div class="photo-fallback" aria-hidden="true">?</div>
+              <figcaption class="nameplate">RORY</figcaption>
+            </figure>
+
+            <div class="trainer-info">
+              <h3 class="trainer-name">RORY DREW</h3>
+              <p class="trainer-class">AI ENGINEER / DATA ANALYST</p>
+              <div class="type-row">
+                <span class="type-pill type-steel">STEEL</span>
+                <span class="type-pill type-water">WATER</span>
+              </div>
+              <dl class="trainer-stats">
+                <div><dt>REGION</dt><dd>Suwanee, GA</dd></div>
+                <div><dt>SCHOOL</dt><dd>University of Georgia &mdash; Terry College of Business</dd></div>
+                <div><dt>BADGE</dt><dd>B.B.A. Management Information Systems &middot; Expected May 2027</dd></div>
+                <div><dt>POKÉGEAR</dt><dd><a href="tel:+14705051712">(470) 505-1712</a></dd></div>
+                <div><dt>MAIL</dt><dd><a href="mailto:rorymdrew@gmail.com">rorymdrew@gmail.com</a></dd></div>
+                <div><dt>LINK</dt><dd><a href="https://linkedin.com/in/rorymdrew" target="_blank" rel="noopener">linkedin.com/in/rorymdrew</a></dd></div>
+              </dl>
+            </div>
+
+            <figure class="partner-slot">
+              <div class="partner-sprite" id="empoleon-sprite" role="img" aria-label="Pixel sprite of Empoleon"></div>
+              <figcaption>
+                <span class="partner-name">EMPOLEON</span>
+                <span class="partner-sub">PARTNER &middot; Lv.21</span>
+              </figcaption>
+            </figure>
+          </div>
+
+          <div class="dex-flavor">
+            <span class="flavor-arrow" aria-hidden="true">&#9654;</span>
+            <p id="flavor-text" data-text="An AI engineer and data analyst who builds automation systems that erase manual work and surface hidden revenue. Known to evolve rapidly when exposed to messy, unstructured data.">An AI engineer and data analyst who builds automation systems that erase manual work and surface hidden revenue. Known to evolve rapidly when exposed to messy, unstructured data.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== 002 FIELD LOG ===== -->
+      <section class="panel" id="panel-field" role="tabpanel" aria-label="Field Log — Work Experience" hidden>
+        <div class="panel-head">
+          <span class="panel-no">No.002</span>
+          <h2>FIELD LOG</h2>
+          <span class="panel-sub">WORK EXPERIENCE &mdash; SELECT AN ENTRY</span>
+        </div>
+
+        <article class="entry">
+          <button class="entry-head" type="button" aria-expanded="false">
+            <span class="entry-marker" aria-hidden="true">&#9654;</span>
+            <span class="entry-title">ModifyHealth</span>
+            <span class="entry-role">AI Engineer Intern</span>
+            <span class="entry-dates">May 2026 &ndash; Aug 2026</span>
+          </button>
+          <div class="entry-body">
+            <ul>
+              <li>Built an automated invoice reconciliation system in Python and Claude Code, eliminating 3+ manual roles and surfacing $8M in unrealized outstanding revenue via a live-updating HTML dashboard.</li>
+              <li>Engineered 10+ HIPAA-compliant Keragon automation workflows, eliminating 100+ hours/week of manual clinical and operational labor across cross-functional teams.</li>
+              <li>Developed an end-to-end AI call transcription platform with automated scoring feedback loop, per-agent performance statistics, and a management dashboard surfacing recurring quality issues.</li>
+              <li>Delivered an AI literacy seminar to 300+ employees on HIPAA-compliant AI usage and productivity best practices, driving broad adoption across teams that had not previously utilized AI tools.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="entry">
+          <button class="entry-head" type="button" aria-expanded="false">
+            <span class="entry-marker" aria-hidden="true">&#9654;</span>
+            <span class="entry-title">Life Time Fitness</span>
+            <span class="entry-role">Pickleball Data Analyst</span>
+            <span class="entry-dates">Jul 2024 &ndash; Present</span>
+          </button>
+          <div class="entry-body">
+            <ul>
+              <li>Designed and maintained Excel-based performance tracking systems analyzing athlete metrics including win rate, shot accuracy, and serve consistency across 30+ active clients.</li>
+              <li>Translated quantitative performance trends into individualized, data-driven training adjustments, improving client outcomes through clearly defined and consistently tracked KPIs.</li>
+              <li>Managed structured datasets for enrollment, payments, and retention using SQL and Excel, delivering actionable insights and operational recommendations directly to stakeholders.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="entry">
+          <button class="entry-head" type="button" aria-expanded="false">
+            <span class="entry-marker" aria-hidden="true">&#9654;</span>
+            <span class="entry-title">Life Time Fitness</span>
+            <span class="entry-role">Membership Concierge II</span>
+            <span class="entry-dates">Oct 2023 &ndash; Present</span>
+          </button>
+          <div class="entry-body">
+            <ul>
+              <li>Maintained accurate customer records and transaction data across CRM systems, ensuring data integrity throughout high-volume membership, payment, and account update workflows.</li>
+              <li>Leveraged DOMO and MMS to validate transaction data and enforce compliance with organizational procedures in a fast-paced, policy-driven environment.</li>
+              <li>Identified and documented front-desk workflow inefficiencies, presenting data-driven process improvement recommendations that enhanced accuracy and operational efficiency.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="entry">
+          <button class="entry-head" type="button" aria-expanded="false">
+            <span class="entry-marker" aria-hidden="true">&#9654;</span>
+            <span class="entry-title">Independent Reselling Business</span>
+            <span class="entry-role">Founder &amp; Analyst</span>
+            <span class="entry-dates">Aug 2017 &ndash; Present</span>
+          </button>
+          <div class="entry-body">
+            <ul>
+              <li>Built and scaled a data-driven e-commerce operation to six-figure annual profit, managing 500+ SKUs and using structured datasets to optimize pricing, demand forecasting, and inventory turnover.</li>
+              <li>Configured and maintained server infrastructure, proxies, and checkout automation scripts, using live market metrics to maximize order volume and adapt to evolving platform protections.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="entry">
+          <button class="entry-head" type="button" aria-expanded="false">
+            <span class="entry-marker" aria-hidden="true">&#9654;</span>
+            <span class="entry-title">Radil's Kitchen</span>
+            <span class="entry-role">Founder &amp; Data Analyst</span>
+            <span class="entry-dates">Nov 2019 &ndash; Mar 2023</span>
+          </button>
+          <div class="entry-body">
+            <ul>
+              <li>Founded and scaled a subscription-based reselling platform to 1,500+ active users, generating $2M+ in collective annual profit across designer goods and Web3 commodities.</li>
+              <li>Consumed public APIs to aggregate historical market data, producing daily predictive reports that gave members a consistent analytical edge.</li>
+              <li>Hosted weekly strategy seminars for 100+ global members, delivering data-driven market analysis and individualized Q&amp;A that directly informed member purchasing and reselling strategy.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="entry">
+          <button class="entry-head" type="button" aria-expanded="false">
+            <span class="entry-marker" aria-hidden="true">&#9654;</span>
+            <span class="entry-title">Lynx Scripts</span>
+            <span class="entry-role">Assistant Developer</span>
+            <span class="entry-dates">Jan 2020 &ndash; Dec 2020</span>
+          </button>
+          <div class="entry-body">
+            <ul>
+              <li>Co-developed a JavaScript automation tool for Shopify and Stripe checkouts, improving transaction speeds for 200+ global clients and generating $2K+ in monthly recurring revenue at peak.</li>
+              <li>Gathered and prioritized customer feedback to drive iterative feature development, resulting in measurable improvements to user satisfaction, retention, and platform reliability.</li>
+            </ul>
+          </div>
+        </article>
+      </section>
+
+      <!-- ===== 003 RESEARCH LOGS ===== -->
+      <section class="panel" id="panel-research" role="tabpanel" aria-label="Research Logs — Projects" hidden>
+        <div class="panel-head">
+          <span class="panel-no">No.003</span>
+          <h2>RESEARCH LOGS</h2>
+          <span class="panel-sub">PROJECTS &mdash; SELECT AN ENTRY</span>
+        </div>
+
+        <article class="entry">
+          <button class="entry-head" type="button" aria-expanded="false">
+            <span class="entry-marker" aria-hidden="true">&#9654;</span>
+            <span class="entry-title">Uber Data Analysis</span>
+            <span class="entry-role">Python + Jupyter Notebook</span>
+            <span class="entry-dates">DATA STUDY</span>
+          </button>
+          <div class="entry-body">
+            <ul>
+              <li>Cleaned and analyzed a 150K-row Uber bookings dataset using Pandas and NumPy, building Matplotlib visualizations to surface ride-volume trends and identify key drivers of trip cancellations.</li>
+              <li>Translated findings into strategic recommendations for improving service completion rates, communicating insights through structured reporting aimed at operational decision-makers.</li>
+            </ul>
+          </div>
+        </article>
+
+        <p class="more-soon">&#9654; MORE RESEARCH DATA TO BE RECORDED&hellip;<span class="blink">&#9646;</span></p>
+      </section>
+
+      <!-- ===== 004 ABILITY SET ===== -->
+      <section class="panel" id="panel-ability" role="tabpanel" aria-label="Ability Set — Skills" hidden>
+        <div class="panel-head">
+          <span class="panel-no">No.004</span>
+          <h2>ABILITY SET</h2>
+          <span class="panel-sub">BASE STATS &mdash; EMPOLEON CONFIG</span>
+        </div>
+
+        <div class="stats-panel" id="stats-panel">
+
+          <div class="stat-row" data-value="92">
+            <div class="stat-label"><span class="stat-game">HP</span><span class="stat-name">ANALYTICAL RANGE</span></div>
+            <div class="stat-bar"><div class="stat-fill"></div></div>
+            <span class="stat-num">92</span>
+            <p class="stat-skills">Data Analytics &amp; Programming &mdash; Python, Pandas, NumPy, Matplotlib, SQL, PostgreSQL, T-SQL, Excel</p>
+          </div>
+
+          <div class="stat-row" data-value="95">
+            <div class="stat-label"><span class="stat-game">SP.ATK</span><span class="stat-name">AI POWER</span></div>
+            <div class="stat-bar"><div class="stat-fill"></div></div>
+            <span class="stat-num">95</span>
+            <p class="stat-skills">AI &amp; Automation &mdash; Claude Code, HIPAA-Compliant AI Workflows, Process Automation</p>
+          </div>
+
+          <div class="stat-row" data-value="90">
+            <div class="stat-label"><span class="stat-game">SPEED</span><span class="stat-name">EXECUTION SPEED</span></div>
+            <div class="stat-bar"><div class="stat-fill"></div></div>
+            <span class="stat-num">90</span>
+            <p class="stat-skills">AI &amp; Automation &mdash; Keragon, Power Automate, rapid workflow deployment</p>
+          </div>
+
+          <div class="stat-row" data-value="86">
+            <div class="stat-label"><span class="stat-game">ATTACK</span><span class="stat-name">BUILD STRENGTH</span></div>
+            <div class="stat-bar"><div class="stat-fill"></div></div>
+            <span class="stat-num">86</span>
+            <p class="stat-skills">Data Visualization &amp; BI &mdash; Power BI, Tableau, Data Modeling, Calculated Fields, R / R-Studio</p>
+          </div>
+
+          <div class="stat-row" data-value="88">
+            <div class="stat-label"><span class="stat-game">DEFENSE</span><span class="stat-name">DATA INTEGRITY</span></div>
+            <div class="stat-bar"><div class="stat-fill"></div></div>
+            <span class="stat-num">88</span>
+            <p class="stat-skills">Systems &amp; Tools &mdash; SAP, Snowflake, Foundational Cloud, Microsoft Suite, DOMO</p>
+          </div>
+
+          <div class="stat-row" data-value="84">
+            <div class="stat-label"><span class="stat-game">SP.DEF</span><span class="stat-name">SYSTEM RESILIENCE</span></div>
+            <div class="stat-bar"><div class="stat-fill"></div></div>
+            <span class="stat-num">84</span>
+            <p class="stat-skills">Collaboration &amp; Reporting &mdash; Technical Reporting, Stakeholder Communication, KPI Definition, LSS</p>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ===== 005 CONTACT / LINKS ===== -->
+      <section class="panel" id="panel-contact" role="tabpanel" aria-label="Contact and Links" hidden>
+        <div class="panel-head">
+          <span class="panel-no">No.005</span>
+          <h2>CONTACT / LINKS</h2>
+          <span class="panel-sub">POKÉGEAR &mdash; REGISTERED CONTACTS</span>
+        </div>
+
+        <ul class="gear-list">
+          <li class="gear-item">
+            <span class="gear-icon" aria-hidden="true">&#9993;</span>
+            <span class="gear-label">MAIL</span>
+            <a href="mailto:rorymdrew@gmail.com">rorymdrew@gmail.com</a>
+          </li>
+          <li class="gear-item">
+            <span class="gear-icon" aria-hidden="true">&#9742;</span>
+            <span class="gear-label">CALL</span>
+            <a href="tel:+14705051712">(470) 505-1712</a>
+          </li>
+          <li class="gear-item">
+            <span class="gear-icon" aria-hidden="true">&#128279;</span>
+            <span class="gear-label">LINKEDIN</span>
+            <a href="https://linkedin.com/in/rorymdrew" target="_blank" rel="noopener">linkedin.com/in/rorymdrew</a>
+          </li>
+          <li class="gear-item">
+            <span class="gear-icon" aria-hidden="true">&#9881;</span>
+            <span class="gear-label">GITHUB</span>
+            <a href="https://github.com/rorymdrew" target="_blank" rel="noopener">github.com/rorymdrew</a>
+          </li>
+        </ul>
+
+        <div class="dex-flavor">
+          <span class="flavor-arrow" aria-hidden="true">&#9654;</span>
+          <p>TRAINER RORY would like to battle! Send a message to register this trainer in your Pok&eacute;gear.</p>
+        </div>
+      </section>
+
+    </div><!-- /dex-right -->
+  </div><!-- /dex-body -->
+
+  <footer class="dex-footer">
+    <span>&copy; 2026 RORY DREW</span>
+    <span class="footer-hint">BUILT WITH HTML / CSS / JS &mdash; NO FRAMEWORKS, NO BUILD STEP</span>
+  </footer>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

@@ -54,11 +54,11 @@ Just open `index.html` in any browser. No server needed.
    domain. Then at your DNS provider, add a `CNAME` record pointing `www` (or a
    subdomain) to `rorymdrew.github.io`. Check "Enforce HTTPS" once the cert issues.
 
-## Add your headshot
+## Trainer portrait
 
-Put a square-ish photo at `assets/headshot.jpg`. It gets the DS trainer-card
-treatment automatically (pixelation filter + gold frame). If the file is missing,
-a pixel-art placeholder shows instead — nothing breaks.
+The trainer-card portrait is `assets/brock.png` (Brock's HG/SS VS sprite). To swap
+it, replace that file with any image; the gold frame and pixelated rendering apply
+automatically. If the file is missing, a pixel-art placeholder shows instead.
 
 ## Customizing
 
